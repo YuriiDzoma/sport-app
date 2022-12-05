@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import styles from './App.module.scss';
+import Header from "./components/Header/Header";
+import NavigationContainer from "./components/Navigation/NavigationContainer";
+import {Routes, Route} from "react-router-dom";
+import ProfileContainer from "./components/Profile/ProfileContainer";
+import Training from "./components/Training/Training";
+import Friends from "./components/Friends/Friends";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className={styles.wrapper}>
+            <div className={styles.container}>
+                <Header />
+                <NavigationContainer />
+                <div>
+                    <Routes>
+                        <Route path='/profile/*' element={<ProfileContainer />} />
+                        <Route path='/training/*' element={<Training />} />
+                        <Route path='/friends/*' element={<Friends />} />
+                    </Routes>
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default App;
