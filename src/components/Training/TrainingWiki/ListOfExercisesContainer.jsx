@@ -15,7 +15,7 @@ const ListOfExercisesContainer = ({exercises, type}) => {
                             <span>{item.name}</span>
                         </div>
                         )
-                }
+                } return item
             }) }
         </div>
     )

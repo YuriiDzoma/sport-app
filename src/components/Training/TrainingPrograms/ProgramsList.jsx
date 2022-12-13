@@ -10,7 +10,7 @@ const ProgramsList = ({programs, getProgram}) => (
                 <div className={styles.program} onClick={() => {
                     getProgram(item.id, item)
                 }}>
-                    <span>{item.name}</span>
+                    <span>{item.title}</span>
                 </div>
             </CustomLink>
 

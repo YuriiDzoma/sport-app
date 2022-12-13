@@ -5,9 +5,9 @@ import {addComment, addProgram, editProgram} from "../../../redux/training-reduc
 import {Route, Routes} from "react-router-dom";
 import ProgramCreateButton from "./ProgramCreate/ProgramCreateButton";
 import {useState} from "react";
-import ProgramExpand from "./ProgramExpand";
+import ProgramExpand from "./ProgramExpand/ProgramExpand";
 import {getPrograms} from "../../../redux/training-selectors";
-import CreateProgramFormMaster from "./ProgramCreate/ProgramCreateMaster";
+import CreateProgramForm from "./ProgramCreate/CreateProgramForm";
 
 const TrainingProgramsContainer = ({programs, addProgram, editProgram, addComment}) => {
 
@@ -31,13 +31,13 @@ const TrainingProgramsContainer = ({programs, addProgram, editProgram, addCommen
             <div className={styles.programsContent}>
 
                 <Routes>
-                    <Route path={'create/'} element={<CreateProgramFormMaster
+                    <Route path={'create/'} element={<CreateProgramForm
                         isEditor={false} addProgram={addProgram}/>}/>
 
                     <Route path={":id"} element={<ProgramExpand
                         programId={program} programs={programs} addComment={addComment} />} />
 
-                    <Route path={`:id/redactor/`} element={<CreateProgramFormMaster
+                    <Route path={`:id/redactor/`} element={<CreateProgramForm
                         isEditor={true} programValue={programValue} editProgram={editProgram} />}/>
                 </Routes>
 

@@ -1,78 +1,65 @@
-import styles from '../TrainingPrograms.module.scss'
-import {Field, Form, Formik} from "formik";
+import {useFormik} from "formik";
 import {useNavigate} from "react-router";
+import styles from "../TrainingPrograms.module.scss";
+import CreateName from "./CreateName";
+import CreateType from "./CreateType";
+import CreateExercises from "./CreateExercises";
+import CreateDay from "./CreateDay";
 
-
-const programsCreatorFormValidate = () => {
-    const errors = {};
-    return errors;
-}
 
 const CreateProgramForm = (props) => {
 
     const navigate = useNavigate();
 
-    const submit = (values, { setSubmitting, resetForm }) => {
-        setTimeout(() => {
-            props.isEditor
-                ? props.editProgram(props.programValue.id, values.name, values.typeOf, values.text)
-                :  props.addProgram(values.name, values.typeOf, values.text);
-            setSubmitting(false);
-            resetForm();
-            navigate('/training/training_programs/');
-        }, 400);
-    };
+    const formValues = props.isEditor
+        ? {
+            title: `${props.programValue.title}`, typeOf: `${props.programValue.typeOf}`, days: props.programValue.days
+        }
+        : {
+            title: '', typeOf: 'aerobic', days: [
+                {day: 1, exercises: [{id: 1, name: ''}, {id: 2, name: ''}, {id: 3, name: ''}]}
+            ],
+        }
+
+
+    const formik = useFormik({
+
+        initialValues: formValues,
+
+        onSubmit: values => {
+            setTimeout(() => {
+                props.isEditor
+                    ? props.editProgram(props.programValue.id, values)
+                    :  props.addProgram(values);
+                navigate('/training/training_programs/');
+                formik.setSubmitting(false);
+            }, 400);
+        },
+
+    });
 
     return (
-        <div>
-            <Formik
-                initialValues={ props.isEditor
-                    ? {name: `${props.programValue.name}`, typeOf: `${props.programValue.type}`, text: `${props.programValue.text}` }
-                    : {name: '', typeOf: 'aerobic', text: '' }}
+        <form onSubmit={formik.handleSubmit}>
 
-                validate={programsCreatorFormValidate}
-                onSubmit={submit}
-            >
-                {({values, isSubmitting}) => (
-                    <Form>
-                        <div className={styles.createProgramInfo}>
+            <div className={styles.createProgramInfo}>
+                <CreateName formik={formik} />
+                <CreateType formik={formik} />
+            </div>
 
-                            <div className={styles.createProgramInfo_name}>
-                                <span>Name:</span>
-                                <Field type="text" name="name" />
-                            </div>
+            <div className={styles.createProgramWrite}>
 
-                            <div className={styles.createProgramInfo_type}>
-                                <span>Type:</span>
-                                <Field as="select" name="typeOf">
-                                    <option value={'aerobic'}>Aerobic</option>
-                                    <option value={'anaerobic'}>Anaerobic</option>
-                                    <option value={'mixed'}>Mixed</option>
-                                </Field>
-                            </div>
+                <CreateExercises formik={formik} />
+                <CreateDay formik={formik} />
 
-                        </div>
-                        <div className={styles.createProgramWrite}>
-
-                            <div>
-                                <Field as='input' name='text' />
-                            </div>
-
-                            <div className={styles.createProgramWrite_create}>
-                                <button type="submit" disabled={isSubmitting}>
-                                    {props.isEditor
-                                        ? <span>confirm changes</span>
-                                        : <span>Create</span>}
-                                </button>
-                            </div>
-
-                        </div>
-                    </Form>
-                )}
-            </Formik>
-        </div>
-
-    )
+            </div>
+            <div className={styles.createProgramWrite_create}>
+                <button type="submit" disabled={formik.isSubmitting}>
+                    <span>{props.isEditor
+                        ? <span>confirm changes</span>
+                        : <span>Create</span>}</span>
+                </button>
+            </div>
+        </form>)
 }
 
 export default CreateProgramForm;

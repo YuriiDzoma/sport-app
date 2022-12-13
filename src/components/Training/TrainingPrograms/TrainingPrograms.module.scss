@@ -54,6 +54,7 @@
 
     span {
       margin-right: 14px;
+      font-size: 18px;
     }
 
     select {
@@ -98,13 +99,10 @@
   margin-left: 8px;
   color: white;
   position: relative;
-
-  div {
-    margin-top: 16px;
-  }
 }
 
 .programExpand {
+  margin-top: 8px;
 
   h2 {
     text-shadow: 1px 1px 1px #5da3b4;
@@ -112,7 +110,7 @@
     font-weight: 500;
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   span:first-child {
@@ -243,10 +241,48 @@
 .redactor {
   position: absolute;
   right: 10px;
-  top: 0;
+  top: 10px;
   font-size: 22px;
+
   a {
-    color: #3844b2;
+    color: #4d57bd;
+  }
+}
+
+.createDay {
+  display: flex;
+  justify-content: center;
+
+  div {
+    margin: 20px 20px;
+  }
+
+  &_remove {
+
+    button {
+      position: relative;
+      padding: 10px 6px 4px 6px;
+      background-color: #5da3b4;
+      z-index: 10;
+      color: white;
+      font-weight: 500;
+      width: 60px;
+      border-radius: 50px 50px 20% 20%;
+    }
+  }
+
+  &_add {
+
+    button {
+      position: relative;
+      padding: 4px 6px 10px 6px;
+      background-color: #5da3b4;
+      z-index: 10;
+      width: 60px;
+      color: white;
+      font-weight: 500;
+      border-radius: 20% 20% 50px 50px;
+    }
   }
 }
 

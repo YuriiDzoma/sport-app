@@ -1,5 +1,5 @@
-import ProgramExpandInfo from "./ProgramExpandInfo";
-import ProgramExpandComments from "./Comments/ProgramExpandComments";
+import ProgramExpandInfo from "../ProgramExpandInfo";
+import ProgramExpandComments from "../Comments/ProgramExpandComments";
 
 const ProgramExpand = ({programs, programId, addComment}) => {
 
