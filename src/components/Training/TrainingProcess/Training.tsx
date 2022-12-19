@@ -1,6 +1,6 @@
 
 
-const TrainingProcess = (props) => {
+const TrainingProcess = () => {
 
     return (
         <div>

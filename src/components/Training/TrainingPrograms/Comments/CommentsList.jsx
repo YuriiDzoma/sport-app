@@ -1,7 +1,7 @@
 import styles from "./Comments.module.scss";
 
 
-const CommentsMap = (props) => {
+const CommentsList = (props) => {
     return (
         <div>
             {props.comments.map(item => {
@@ -16,4 +16,4 @@ const CommentsMap = (props) => {
     )
 }
 
-export default CommentsMap;
+export default CommentsList;

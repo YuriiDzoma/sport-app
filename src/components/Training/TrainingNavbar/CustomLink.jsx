@@ -1,5 +1,5 @@
 import  { Link } from "react-router-dom";
-import styles from './Training.module.scss';
+import styles from '../Training.module.scss';
 import {useLocation} from "react-router";
 
 const CustomLink = ({children, to, ...props}) => {

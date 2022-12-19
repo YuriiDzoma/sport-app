@@ -1,8 +1,8 @@
-import TrainingWikiNavbar from "./TrainingWikiNavbar";
-import styles from './TrainingWiki.module.scss'
+import TrainingWikiNavbar from "./TrainingWikiNavbar/TrainingWikiNavbar";
+import styles from './TrainingWikiNavbar/TrainingWiki.module.scss'
 
 
-const TrainingWikiNavbarContainer = (props) => {
+const TrainingWikiNavbarContainer = () => {
 
     const backgroundImg = require('../../../assets/img/body.jpg');
 

@@ -4,14 +4,19 @@ import profileReducer from "./profile-reducer";
 import trainingReducer from "./training-reducer";
 
 
-let reducers = combineReducers({
+let rootReducers = combineReducers({
     navigation: navigationReducer,
     profile: profileReducer,
     training: trainingReducer,
 });
 
-let store = createStore(reducers);
+type RootReducer = typeof rootReducers;
+export type AppStateType = ReturnType<RootReducer>
 
+let store = createStore(rootReducers);
+
+
+// @ts-ignore
 window.store = store;
 
 export default store;

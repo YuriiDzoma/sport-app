@@ -1,7 +1,7 @@
 import styles from './Comments.module.scss'
 import CommentsForm from "./CommentsForm";
 import CommentsSubtitle from "./CommentsSubtitle";
-import CommentsMap from "./CommentsMap";
+import CommentsList from "./CommentsList";
 
 
 const ProgramExpandComments = ({program, addComment}) => {
@@ -10,7 +10,7 @@ const ProgramExpandComments = ({program, addComment}) => {
         <div className={styles.commentsContainer}>
             <CommentsForm programId={program.id} addComment={addComment}/>
             {program.comments.length > 0 ? <CommentsSubtitle /> : null}
-            <CommentsMap comments={program.comments} />
+            <CommentsList comments={program.comments} />
         </div>
     )
 }

@@ -3,8 +3,8 @@ import {Route, Routes} from "react-router-dom";
 import TrainingProcess from "./TrainingProcess/Training";
 import TrainingProgramsContainer from "./TrainingPrograms/TrainingProgramsContainer";
 import TrainingWikiNavbarContainer from "./TrainingWiki/TrainingWikiNavbarContainer";
-import TrainingNavbar from "./TrainingNavbar";
-import ListOfExercisesContainer from "./TrainingWiki/ListOfExercisesContainer";
+import ListOfExercisesContainer from "./TrainingWiki/ListOfExercises/ListOfExercisesContainer";
+import TrainingNavbar from "./TrainingNavbar/TrainingNavbar";
 
 
 const Training = () => {
