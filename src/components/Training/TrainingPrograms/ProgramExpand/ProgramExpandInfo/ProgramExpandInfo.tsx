@@ -1,10 +1,12 @@
-import styles from "./TrainingPrograms.module.scss";
+import styles from './ProgramExpandInfo.module.scss';
 import {Link} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPenToSquare} from "@fortawesome/free-regular-svg-icons";
-import ProgramExpandExercises from "./ProgramExpand/ProgramExpandExercises.jsx";
+import ProgramDaysList from "./ProgramExpandExercises/ProgramDaysList";
+import {ProgramExpandInfoProps} from "./ProgramExpandInfo.types";
+import React from "react";
 
-const ProgramExpandInfo = ({item}) => (
+const ProgramExpandInfo:React.FC<ProgramExpandInfoProps> = ({item}) => (
 
     <div className={styles.programExpandContainer}>
         <div className={styles.programExpand}>
@@ -18,7 +20,7 @@ const ProgramExpandInfo = ({item}) => (
             </div>
         </div>
 
-        <ProgramExpandExercises item={item}/>
+        <ProgramDaysList itemDays={item.days}/>
 
         <div className={styles.redactor}>
             <Link to={`/training/training_programs/${item.id}/redactor/`}>

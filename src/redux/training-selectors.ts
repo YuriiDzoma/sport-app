@@ -6,6 +6,5 @@ export const getPrograms = (state: AppStateType) => {
 }
 
 export const getExercises = (state: AppStateType) => {
-
     return state.training.exercisesWiki;
 }

@@ -86,7 +86,7 @@ let initialState: Training = {
     ]
 }
 
-const trainingReducer = (state = initialState, action: any) => {
+const trainingReducer = (state = initialState, action: any): Training => {
     switch (action.type) {
 
         case ADD_PROGRAM: {
@@ -106,7 +106,7 @@ const trainingReducer = (state = initialState, action: any) => {
         case EDIT_PROGRAM: {
             return {
                 ...state,
-                programs: state.programs.map(program => {
+                programs: state.programs.map((program: any) => {
                     if (program.id === action.programId) {
                         return {
                             ...action.values,
@@ -122,7 +122,7 @@ const trainingReducer = (state = initialState, action: any) => {
         case ADD_COMMENT: {
             return {
                 ...state,
-                programs: state.programs.map(program => {
+                programs: state.programs.map((program: any) => {
                     if (program.id === action.programId) {
 
                         let newComment = {

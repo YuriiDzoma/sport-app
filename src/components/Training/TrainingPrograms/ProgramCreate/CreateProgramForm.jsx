@@ -1,10 +1,10 @@
 import {useFormik} from "formik";
 import {useNavigate} from "react-router";
 import styles from "../TrainingPrograms.module.scss";
-import CreateName from "./CreateName";
-import CreateType from "./CreateType";
-import CreateExercises from "./CreateExercises";
-import CreateDay from "./CreateDay";
+import CreateName from "./CreateName/CreateName";
+import CreateType from "./CreateType/CreateType";
+import CreateExercises from "./CreateExercises/CreateExercises";
+import CreateDay from "./CreateDay/CreateDay";
 
 
 const CreateProgramForm = (props) => {
@@ -42,6 +42,7 @@ const CreateProgramForm = (props) => {
         <form onSubmit={formik.handleSubmit}>
 
             <div className={styles.createProgramInfo}>
+
                 <CreateName formik={formik} />
                 <CreateType formik={formik} />
             </div>
@@ -53,11 +54,13 @@ const CreateProgramForm = (props) => {
 
             </div>
             <div className={styles.createProgramWrite_create}>
+
                 <button type="submit" disabled={formik.isSubmitting}>
                     <span>{props.isEditor
                         ? <span>confirm changes</span>
                         : <span>Create</span>}</span>
                 </button>
+
             </div>
         </form>)
 }

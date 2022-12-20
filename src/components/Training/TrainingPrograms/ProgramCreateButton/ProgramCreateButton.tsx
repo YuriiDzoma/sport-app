@@ -1,8 +1,8 @@
-import styles from "../TrainingPrograms.module.scss";
+import styles from './ProgramCreateButton.module.scss';
 import {Link} from "react-router-dom";
 
 
-const ProgramCreateButton = (props) => {
+const ProgramCreateButton = () => {
     return (
         <div className={styles.createProgram}>
             <div><span>Create new program</span></div>

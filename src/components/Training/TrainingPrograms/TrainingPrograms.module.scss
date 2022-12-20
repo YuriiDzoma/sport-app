@@ -10,21 +10,6 @@
   min-height: 600px;
   padding-right: 8px;
 
-  .createProgram {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    span {
-      font-size: 13px;
-    }
-    &__link {
-      background-color: rgba(192, 213, 192, 0.82);
-      padding: 6px 10px 7px;
-      border-radius: 5px;
-      outline: 1px solid white;
-    }
-  }
 }
 
 .programsContent {
@@ -92,75 +77,9 @@
   margin-bottom: 20px ;
 }
 
-.programExpandContainer {
-  padding: 10px 16px 30px 16px;
-  background-color: #89c1ce;
-  border-radius: 8px;
-  margin-left: 8px;
-  color: white;
-  position: relative;
-}
 
-.programExpand {
-  margin-top: 8px;
 
-  h2 {
-    text-shadow: 1px 1px 1px #5da3b4;
-    font-size: 20px;
-    font-weight: 500;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
-  }
 
-  span:first-child {
-    margin-right: 12px;
-  }
-
-  &_type {
-    display: flex;
-    justify-content: right;
-    margin-bottom: 40px;
-  }
-}
-
-.program {
-  transition-property: all;
-  transition-duration: 0.5s;
-  transition-delay: 0s;
-  transition-timing-function: ease;
-  margin: 16px 0;
-  width: 150px;
-  height: 40px;
-  border-radius: 8px;
-  background-color: #5da3b4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  span {
-    display: block;
-    color: white;
-  }
-}
-
-.link_active {
-
-  div {
-    transition-property: all;
-    transition-duration: 0.5s;
-    transition-delay: 0s;
-    transition-timing-function: ease;
-    box-shadow: white;
-    background-color: #89c1ce;
-    outline: 2px solid white;
-    span{
-      color: #f0fcee;
-      font-weight: 700;
-      font-size: 16px;
-    }
-  }
-}
 
 .field {
   margin-top: 6px;
@@ -238,16 +157,6 @@
   cursor: pointer;
 }
 
-.redactor {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  font-size: 22px;
-
-  a {
-    color: #4d57bd;
-  }
-}
 
 .createDay {
   display: flex;

@@ -1,11 +1,13 @@
-import ProgramExpandInfo from "../ProgramExpandInfo";
-import ProgramExpandComments from "../Comments/ProgramExpandComments";
+import ProgramExpandInfo from "./ProgramExpandInfo/ProgramExpandInfo";
+import ProgramExpandComments from "./ProgramExpandComments/ProgramExpandComments";
+import {ProgramExpandProps} from "./ProgramExpand.types";
+import React from "react";
 
-const ProgramExpand = ({programs, programId, addComment}) => {
+const ProgramExpand: React.FC<ProgramExpandProps> = ({programs, programId, addComment}) => {
 
     return (
         <div>
-            {programs.map(item => {
+            {programs.map((item) => {
                 if (item.id === programId) {
 
                     return (

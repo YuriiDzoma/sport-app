@@ -36,7 +36,7 @@ export type Program = {
 }
 
 export type Training = {
-    programs: Program[]
+    programs: Program[] | any
     exercisesWiki: exerciseWiki[]
 }
 

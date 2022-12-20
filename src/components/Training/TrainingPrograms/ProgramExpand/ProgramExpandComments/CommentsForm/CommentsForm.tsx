@@ -1,21 +1,23 @@
-import styles from './Comments.module.scss'
+import styles from './CommentsForm.module.scss'
 import {Field, Form, Formik} from "formik";
+import React from "react";
+import {CommentsFormProps, FormikProps, SubmitProps} from "./CommentForm.types";
 
-const programsCreatorFormValidate = (values) => {
+
+const programsCreatorFormValidate = () => {
     const errors = {};
     return errors;
 }
 
-const CommentsForm = (props) => {
+const CommentsForm:React.FC<CommentsFormProps> = ({programId, addComment}) => {
 
-    const submit = (values, { setSubmitting, resetForm }) => {
+    const submit = (values: SubmitProps, { setSubmitting, resetForm }: FormikProps ) => {
         setTimeout(() => {
-            props.addComment(values.comment, props.programId);
+            addComment(values.comment, programId);
             setSubmitting(false);
             resetForm();
         }, 400);
-    };
-
+    }
     return (
         <div>
             <Formik

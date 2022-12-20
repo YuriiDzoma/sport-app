@@ -9,7 +9,7 @@ let initialState: Navigation = {
     ]
 }
 
-export const navigationReducer = (state = initialState, action:any) => {
+export const navigationReducer = (state = initialState, action:any): Navigation => {
     return state;
 }
 export default navigationReducer;
